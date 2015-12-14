@@ -1,6 +1,6 @@
 <div class="main-content">
   <h2><a name="{{className}}"></a>{{className}}</h2>
-  <p>This is the {{className}} API</p>
+  <!--p>This is the {{className}} API</p-->
 
   {{#operations}}
   {{#operation}}
@@ -23,10 +23,14 @@
       {{#isPathParam}}<span class="param-in">Path: </span>{{/isPathParam}}
       {{#isHeaderParam}}<span class="param-in">Header: </span>{{/isHeaderParam}}
       {{#isBodyParam}}<span class="param-in">Body: </span>{{/isBodyParam}}
-      <span class="param-name">{{baseName}}</span>
-      <span class="param-type">{{dataType}}{{#baseType}}({{baseType}}){{/baseType}}</span>
+
+      <span class="param-name">Name: {{baseName}}</span>
+      <span class="param-type">{{#dataType}}Type:({{dataType}}){{/dataType}}{{#baseType}}Type:(<a href="">{{baseType}}</a>){{/baseType}}
+      {{#defaultValue}}, Default Value:{{defaultValue}} {{/defaultValue}}
+      </span>
       {{#optional}}<span class="param-optional-flag">(optional)</span>{{/optional}}
       <p class="param-description">{{description}}</p>
+
 	  </li>
     {{/allParams}}
   </ul>
