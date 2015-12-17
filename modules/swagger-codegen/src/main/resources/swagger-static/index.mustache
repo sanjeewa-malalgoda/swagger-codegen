@@ -1,72 +1,76 @@
 <!DOCTYPE html>
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-  <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css" media="screen">
-  <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-responsive.css" media="screen">
-  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-  <script src="assets/js/jquery-1.8.3.min.js" type="text/javascript"></script>
-  <script src="assets/js/main.js" type="text/javascript"></script>
-
-  <title>REST API Resources</title>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <title>REST API Resources</title>
+   <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css" media="screen">
+   <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-responsive.css" media="screen">
+   <link href="http://c.content.wso2.com/sites/all/common/wso2-common-styles.css" rel="stylesheet">
+   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+   <script src="assets/js/jquery-1.8.3.min.js" type="text/javascript"></script>
+   <script src="assets/js/main.js" type="text/javascript"></script>
 </head>
 <body>
-  <div class="header">
-    <div class="top-bar">
-      <h1 id="logo"><a class="logo" href="/"><span></span><span class="light">WSO2 API Manager 1.10 REST API Document</span></a></h1>
-    </div>
-  </div>
-  <div class="model-container"></div>
-  <div class="content">
-    <div class="box clearfix">
-      <div class="sidebar">
-        <div class="section-box">
-          <div class="section-header">
-            Overview
-          </div>
-          <ul>
-            <li>Getting Started</li>
-          </ul>
-        </div>
-        {{#apiInfo}}
-    		{{#apis}}
-        <div class="section-box">
-          <div class="section-header">
-            <a href="#!/{{classname}}">{{classname}}</a>
-          </div>
-          <ul>
-			      {{#operations}}
-			      {{#operation}}
-            <li><a href="#!/{{classname}}#{{nickname}}">{{nickname}}</a></li>
-            {{/operation}}
-            {{/operations}}
-          </ul>
-        </div>
-        {{/apis}}
-        {{/apiInfo}}
+   <div class="row cHeader">
+      <a id="logo" href="http://wso2.com/api-management/try-it/"><img src="http://b.content.wso2.com/sites/all/common/images/product-logos/api-manager.svg"/></a>
+      <h1><a class="logo" href="/">WSO2 API Manager 1.10 REST API Document</a></h1>
+   </div>
+   <div class="row">
+   <div id="wrapper">
+      <!-- Sidebar -->
+      <div id="sidebar-wrapper">
+         <div class="section-box">
+            <div class="section-header">
+               Overview
+            </div>
+            <ul>
+               <li>Getting Started</li>
+            </ul>
+         </div>
+         {{#apiInfo}}
+         {{#apis}}
+         <div class="section-box">
+            <div class="section-header">
+               <a href="#!/{{classname}}">{{classname}}</a>
+            </div>
+            <ul>
+               {{#operations}}
+               {{#operation}}
+               <li><a href="#!/{{classname}}#{{nickname}}">{{nickname}}</a></li>
+               {{/operation}}
+               {{/operations}}
+            </ul>
+         </div>
+         {{/apis}}
+         {{/apiInfo}}
       </div>
-    <div class="non-sidebar">
-      <div class="main-content">
-        <h2>Getting Started</h2>
-        <p>WSO2 API Manager is a complete solution for publishing APIs, creating and managing a developer community, and for scalably routing API traffic.
-        It leverages proven, production-ready, integration, security and governance components from WSO2 Enterprise Service Bus,
-        WSO2 Identity Server, and WSO2 Governance Registry. Moreover, it is powered by WSO2 Business Activity Monitor,
-        thereby making WSO2 API Manager ready for any large-scale deployments right away.
-        </p><p>
-           As part of its latest release, the REST API was developed as a CXF REST web application running on
-           WSO2 API Manager. This API comes with a pluggable security mechanism. API security is implemented as a
-           CXF handler, hence if users need to plug custom security mechanism then they can write their own handler and
-           add it to web service. This REST API is implemented based on REST best practices and specifications.
-           The API development started with a swagger specification for store and publisher operations.</p>
-        <p>
- Before invoke API with access token we have to obtain consumer key/secret key pair by calling the dynamic client registration endpoint. Then you can request an access token with preffered grant type.
-  </p>
-          <p>
- Here is a sample request to create OAuth application and obtain consumer key and secret pair.
- 	</p>
-            <p>
-<pre style="background:#f9f9f9;color:#080808"> {
+      <!-- Page Content -->
+      <div>
+         <div class="container-fluid">
+            <a href="#menu-toggle" class="cMenuButton" id="menu-toggle"><img src="assets/images/menu.svg"/></a>
+            <div class="row">
+               <div class="col-lg-12 non-sidebar">
+                  <h2>Getting Started</h2>
+                  <p>WSO2 API Manager is a complete solution for publishing APIs, creating and managing a developer community, and for scalably routing API traffic.
+                     It leverages proven, production-ready, integration, security and governance components from WSO2 Enterprise Service Bus,
+                     WSO2 Identity Server, and WSO2 Governance Registry. Moreover, it is powered by WSO2 Business Activity Monitor,
+                     thereby making WSO2 API Manager ready for any large-scale deployments right away.
+                  </p>
+                  <p>
+                     As part of its latest release, the REST API was developed as a CXF REST web application running on
+                     WSO2 API Manager. This API comes with a pluggable security mechanism. API security is implemented as a
+                     CXF handler, hence if users need to plug custom security mechanism then they can write their own handler and
+                     add it to web service. This REST API is implemented based on REST best practices and specifications.
+                     The API development started with a swagger specification for store and publisher operations.
+                  </p>
+                  <p>
+                     Before invoke API with access token we have to obtain consumer key/secret key pair by calling the dynamic client registration endpoint. Then you can request an access token with preffered grant type.
+                  </p>
+                  <p>
+                     Here is a sample request to create OAuth application and obtain consumer key and secret pair.
+                  </p>
+                  <p>
+                  <pre style="background:#f9f9f9;color:#080808"> {
  <span style="color:#0b6125">"callbackUrl"</span><span style="color:#794938">:</span> <span style="color:#0b6125">"www.google.lk"</span><span style="color:#794938">,</span>
  <span style="color:#0b6125">"clientName"</span><span style="color:#794938">:</span> <span style="color:#0b6125">"rest_api_store"</span><span style="color:#794938">,</span>
  <span style="color:#0b6125">"tokenScope"</span><span style="color:#794938">:</span> <span style="color:#0b6125">"Production"</span><span style="color:#794938">,</span>
@@ -74,49 +78,62 @@
  <span style="color:#0b6125">"grantType"</span><span style="color:#794938">:</span> <span style="color:#0b6125">"password refresh_token"</span><span style="color:#794938">,</span>
  <span style="color:#0b6125">"saasApp"</span><span style="color:#794938">:</span> <span style="color:#811f24;font-weight:700">true</span>
  }
-</pre>
-     </p>
-             <p>
- Sample response
- </p>
-         <p>
-<pre style="background:#f9f9f9;color:#080808"> {
+            </pre>
+                  </p>
+                  <p>
+                     Sample response
+                  </p>
+                  <p>
+                  <pre style="background:#f9f9f9;color:#080808"> {
  "callBackURL": "www.google.lk",
  "jsonString": "{\"username\":\"admin\",\"redirect_uris\":\"www.google.lk\",\"tokenScope\":[Ljava.lang.String;@3a73796a,\"client_name\":\"admin_rest_api_store\",\"grant_types\":\"authorization_code password refresh_token iwa:ntlm urn:ietf:params:oauth:grant-type:saml2-bearer client_credentials implicit\"}",
  "clientName": null,
  "clientId": "HfEl1jJPdg5tbtrxhAwybN05QGoa",
  "clientSecret": "l6c0aoLcWR3fwezHhc7XoGOht5Aa"
  }
-</pre>
+            </pre>
+                  </p>
+                  <p>
+                     During the API invocation process request, first come to the CXF handler and then it will call an introspection API to validate the token.
+                     So now you have to generate access token using already create OAuth application.
+                     Please see below sample call to generate access token
+                  </p>
+                  <p>
+                  <pre style="background:#f9f9f9;color:#080808"> curl <span style="color:#794938">-</span>k <span style="color:#794938">-</span>d <span style="color:#0b6125">"grant_type=password&amp;username=sanjeewa&amp;password=sanjeewa&amp;scope=API_SUBSCRIBER_SCOPE"</span> <span style="color:#794938">-</span>H <span style="color:#0b6125">"Authorization: Basic SGZFbDFqSlBkZzV0YnRyeGhBd3liTjA1UUdvYTpsNmMwYW9MY1dSM2Z3ZXpIaGM3WG9HT2h0NUFh"</span> https<span style="color:#794938">:</span><span style="color:#5a525f;font-style:italic">//127.0.0.1:8243/token</span>
 
-   </p>
-           <p>
- During the API invocation process request, first come to the CXF handler and then it will call an introspection API to validate the token.
- So now you have to generate access token using already create OAuth application.
- Please see below sample call to generate access token
- </p>
-         <p>
-         <pre style="background:#f9f9f9;color:#080808"> curl <span style="color:#794938">-</span>k <span style="color:#794938">-</span>d <span style="color:#0b6125">"grant_type=password&amp;username=sanjeewa&amp;password=sanjeewa&amp;scope=API_SUBSCRIBER_SCOPE"</span> <span style="color:#794938">-</span>H <span style="color:#0b6125">"Authorization: Basic SGZFbDFqSlBkZzV0YnRyeGhBd3liTjA1UUdvYTpsNmMwYW9MY1dSM2Z3ZXpIaGM3WG9HT2h0NUFh"</span> https<span style="color:#794938">:</span><span style="color:#5a525f;font-style:italic">//127.0.0.1:8243/token</span>
-
-         </pre>
-      </p>
-              <p>
- Token response
-</p>
-<p>
-<pre style="background:#f9f9f9;color:#080808"> {<span style="color:#0b6125">"scope"</span><span style="color:#794938">:</span><span style="color:#0b6125">"API_SUBSCRIBER_SCOPE"</span><span style="color:#794938">,</span><span style="color:#0b6125">"token_type"</span><span style="color:#794938">:</span><span style="color:#0b6125">"Bearer"</span><span style="color:#794938">,</span>
+            </pre>
+                  </p>
+                  <p>
+                     Token response
+                  </p>
+                  <p>
+                  <pre style="background:#f9f9f9;color:#080808"> {<span style="color:#0b6125">"scope"</span><span style="color:#794938">:</span><span style="color:#0b6125">"API_SUBSCRIBER_SCOPE"</span><span style="color:#794938">,</span><span style="color:#0b6125">"token_type"</span><span style="color:#794938">:</span><span style="color:#0b6125">"Bearer"</span><span style="color:#794938">,</span>
  <span style="color:#0b6125">"expires_in"</span><span style="color:#794938">:</span><span style="color:#811f24;font-weight:700">3600</span><span style="color:#794938">,</span><span style="color:#0b6125">"refresh_token"</span><span style="color:#794938">:</span><span style="color:#0b6125">"33c3be152ebf0030b3fb76f2c1f80bf8"</span><span style="color:#794938">,</span>
  <span style="color:#0b6125">"access_token"</span><span style="color:#794938">:</span><span style="color:#0b6125">"292ff0fd256814536baca0926f483c8d"</span>}
-</pre>
-        </p>
-                <p>
- Now you have valid access token and you may use it to invoke API. You can navigate through API descriptions and find required API.
- Then obtain access token as we discussed in this section. Then invoke API with authentication header.
- If you use different authentication mechanism then this process may be change.
-
-        </p>
+            </pre>
+                  </p>
+                  <p>
+                     Now you have valid access token and you may use it to invoke API. You can navigate through API descriptions and find required API.
+                     Then obtain access token as we discussed in this section. Then invoke API with authentication header.
+                     If you use different authentication mechanism then this process may be change.
+                  </p>
+               </div>
+            </div>
+         </div>
       </div>
-    </div>
-  </div>
+      <!-- /#page-content-wrapper --> 
+   </div>
+   <div class="row cFooterLogo">
+         <div class="container cContent">
+             <a href="/"><img alt="WSO2" src="http://b.content.wso2.com/sites/all/themes/wso2-v6/images/new-home/home-footer-logo.png"></a>
+             <ul>
+                 <li style="font-weight:bold;"><a href="http://wso2.com/subscribe/">Subscribe for the Newsletter</a></li>
+                <li><a href="http://wso2.com/terms-of-use">Legal</a></li>
+                <li><a href="http://wso2.com/privacy-policy">Privacy</a></li>
+                <li><a href="mailto:human-response@wso2.com">Report a problem with this page</a></li>
+            </ul>
+            <span>&copy;<!--?php echo date('Y'); ?--> WSO2</span>
+         </div>
+     </div>
 </body>
 </html>
