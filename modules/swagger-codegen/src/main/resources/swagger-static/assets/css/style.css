@@ -127,7 +127,7 @@ a:hover {
 }
 
 .section-box a {
-  /*    font-weight: bold;*/
+  font-size: 0.9em;
 }
 .section-box ul li ul li a {
   font-weight: normal;
@@ -154,6 +154,73 @@ a:hover {
 #menu-toggle img {
   max-width: 50px;
 }
+
+
+
+
+
+.model-detail-popup {
+  box-shadow: rgba(0, 0, 0, 0.2) 0 2px 8px 5px;
+  padding: 2em;
+  background-color: #efefef;
+  opacity: 0.99;
+  z-index: 1;
+  overflow: scroll;
+  width: 600px;
+  border: 1px solid #5d5d5d;
+
+}
+
+
+.model-detail-popup .code {
+  background-color: #E4F5FF;
+  font-family: monospace;
+  white-space: pre;
+  margin: 10px;
+  overflow: auto;
+}
+
+.model-detail-popup h2 {
+  margin-top: 0px;
+  padding-top: 0px;
+}
+
+.model-detail-popup li {
+  padding-bottom: 5px;
+}
+
+.model-detail-popup .param-reqiured-true {
+  font-family: monospace;
+  font-weight: bold;
+  clear: left;
+  display: block;
+  float: left;
+  width: 100%;
+}
+
+.model-detail-popup .param-required-false {
+  font-family: monospace;
+  clear: left;
+  display: block;
+  float: left;
+  width: 100%;
+}
+
+.model-detail-popup .param-description {
+  margin-left: 50px;
+  float: left;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
