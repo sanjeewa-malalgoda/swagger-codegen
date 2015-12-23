@@ -36,7 +36,7 @@
             <ul>
                {{#operations}}
                {{#operation}}
-               <li><a href="#!/{{classname}}#{{nickname}}">{{nickname}}</a></li>
+               <li><a href="#!/{{classname}}#{{nickname}}">{{summary}}</a></li>
                {{/operation}}
                {{/operations}}
             </ul>
@@ -141,6 +141,13 @@
         e.preventDefault();
         $("#wrapper").toggleClass("toggled");
     });
+    </script>
+    <script>
+    var camelCaseToWords = function(str){
+        return str.match(/^[a-z]+|[A-Z][a-z]*/g).map(function(x){
+            return x[0].toUpperCase() + x.substr(1).toLowerCase();
+        }).join(' ');
+    };
     </script>
 </body>
 </html>
